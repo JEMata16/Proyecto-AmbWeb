@@ -455,3 +455,134 @@ body {
   border: none;
   border-radius: 15px;
 }
+
+/* Restaurante Cliente
+-------------------------------------------------- */
+.info-restaurante {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.info-restaurante img {
+  width: 100%;
+}
+
+.info-restaurante section>p{
+  margin-bottom: 3rem;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem;
+}
+
+.row > * {
+  max-width: 12em;
+}
+
+.row > div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+footer {
+  padding-top: 2rem;
+}
+
+/* Restaurante Cliente Opinion
+-------------------------------------------------- */
+aside {
+  display: flex;
+  margin: 1rem;
+  width: 30%;
+  height: 100%;
+  align-items: center;
+}
+
+aside img {
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.op-container {
+  display: flex;
+}
+
+.op-form-container {
+  display: grid;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.op-form-container form > label{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.ratingForm {
+  display: flex;
+  direction: rtl;
+  justify-content: flex-end;
+}
+
+.ratingForm input[type="radio"] {
+  display: none;
+}
+
+.ratingForm label {
+  font-size: 3rem;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.ratingForm label:before {
+  content: "\2606";
+}
+
+.ratingForm input[type="radio"]:checked~label::before {
+  content: "\2605";
+  color: #ffcc00;
+}
+
+.op-form-container form > textarea {
+  width: 80%;
+
+}
+
+@media(max-width: 768px) {
+  .op-container {
+      display: grid;
+  }
+
+  .op-container aside {
+    width: 100%;
+    float: none;
+  }
+
+  .op-form-container,
+  .op-form-container form>textarea {
+    margin: 1rem;
+  }
+
+  .col-4 {
+    width: 40%;
+  }  
+}
+
+/* html {
+  width: 100%;
+  height: 100%;
+} */
