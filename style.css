@@ -11,6 +11,10 @@
   --auburn: #9b2226ff;
 }
 
+a {
+  text-decoration: none;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -188,7 +192,6 @@ body {
   scroll-snap-type: x mandatory;
   scroll-padding: 1rem;
   overflow: hidden;
-
 }
 
 .reel>* {
