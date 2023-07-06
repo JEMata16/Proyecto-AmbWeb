@@ -11,10 +11,6 @@
   --auburn: #9b2226ff;
 }
 
-a {
-  text-decoration: none;
-}
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -39,6 +35,14 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -145,6 +149,7 @@ body {
 
 .img-container {
   width: 20rem;
+  height: 10rem;
 }
 
 .auto-flex {
@@ -191,13 +196,17 @@ body {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 1rem;
-  overflow: hidden;
+  overflow: scroll;
+  
 }
 
-.reel>* {
-  scroll-snap-align: start;
 
-}
+/* .reel>* {
+  scroll-snap-align: center;
+
+} */
+
+
 
 
 /* Editar restaurantes
@@ -474,22 +483,26 @@ body {
 }
 
 
-.row {
+.op-usuario {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 1rem;
 }
 
-.row > * {
+.op-usuario > * {
   max-width: 12em;
 }
 
-.row > div {
+.op-usuario > div {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-}
+} 
+
+.op-usuario > div > label {
+  font-size: 30px;
+} 
 
 body {
   display: flex;
