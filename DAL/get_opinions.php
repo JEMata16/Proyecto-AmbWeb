@@ -24,7 +24,7 @@ function getUsername($opinion){
     $query = "SELECT u.username FROM usuario u LEFT JOIN opiniones o ON u.idUsuario  = $user_id WHERE u.idUsuario  = $user_id";
     $result = mysqli_query($conexion, $query);
     $username = mysqli_fetch_assoc($result);
-    echo $username;
+    echo $username['username'];
     Desconecta($conexion);
 }
 ?>

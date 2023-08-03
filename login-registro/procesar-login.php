@@ -2,6 +2,10 @@
 
 require_once './funciones.php';
 require_once '../DAL/conexion.php';
+
+?>
+
+<?php
 $conexion = Conecta();
 
 $correo = recogePost("correo");
@@ -26,9 +30,10 @@ if ($contra === ""){
 }
 
 session_start();
+$resultado = $conexion->query("SELECT idUsuario from usuario where correo = '$correo' and contra = '$contra'");
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-    header("Location: ../homePage.php");
+    header("Location: ../homePage.php?idUsuario=$correo");
     exit;
 }
 
@@ -42,9 +47,10 @@ if ($correoOk && $contraOk && $_SERVER["REQUEST_METHOD"] === "POST"){
     if ($resultado->num_rows === 1) {
         $_SESSION["loggedin"] = true;
         $_SESSION["correo"] = $correo;
-        header("Location: ../homePage.php?idUsuario={$resultado}");
+        header("Location: ../homePage.php");
         exit;
     } else {
         echo "Lo sentimos, el correo o contraseña digitados son incorrectos";
     }
 }
+?>
