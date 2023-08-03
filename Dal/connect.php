@@ -17,6 +17,5 @@ function Conecta() {
 }
 
 function Desconecta($conexion) {
-    // ultimo paso
     mysqli_close($conexion);
 }

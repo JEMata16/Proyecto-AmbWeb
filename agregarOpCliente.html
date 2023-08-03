@@ -74,26 +74,27 @@
             </div>
         </aside>
         <section class="op-form-container" id="highestRanking">
-            <form action="">
+            <form action="process-opinion.php" method="POST">
                 <h2>Cuéntenos, ¿cuál fue su experiencia en el restaurante?</h2>
-                <label for="">¿Cómo valora la experiencia?</label>
-                <div class="ratingForm">
-                    <input type="radio" id="star1-1" name="rating" value="1" />
-                    <label for="star1-1"></label>
-                    <input type="radio" id="star2-1" name="rating" value="2" />
-                    <label for="star2-1"></label>
-                    <input type="radio" id="star3-1" name="rating" value="3" />
-                    <label for="star3-1"></label>
-                    <input type="radio" id="star4-1" name="rating" value="4" />
-                    <label for="star4-1"></label>
-                    <input type="radio" id="star5-1" name="rating" value="5" />
-                    <label for="star5-1"></label>
-                </div>
-                <label for="">Escriba su opinión (Opcional)</label>
-                <textarea class="form-control" id="" rows="4"></textarea>
+                <fieldset>
+                    <legend>¿Cómo valora la experiencia?</legend>
+                    <div class="ratingForm">
+                        <input type="radio" id="star1-1" name="rating" value="1" />
+                        <label for="star1-1"></label>
+                        <input type="radio" id="star2-1" name="rating" value="2" />
+                        <label for="star2-1"></label>
+                        <input type="radio" id="star3-1" name="rating" value="3" />
+                        <label for="star3-1"></label>
+                        <input type="radio" id="star4-1" name="rating" value="4" />
+                        <label for="star4-1"></label>
+                        <input type="radio" id="star5-1" name="rating" value="5" />
+                        <label for="star5-1"></label>
+                    </div>
+                </fieldset>
+                <label for="opinion">Escriba su opinión (Opcional)</label>
+                <textarea class="form-control" id="opinion" name="opinion" rows="4"></textarea>
                 <div class="d-grid gap-2 col-4 mt-2 mx-auto">
-                    <button type="submit" 
-                    class="btn btn-outline-secondary rounded-pill">Agregar Opinión</button>
+                    <button type="submit" class="btn btn-outline-secondary rounded-pill">Agregar Opinión</button>
                 </div>
             </form>
         </section>
