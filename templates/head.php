@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Directorio de restaurantes" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Inicio Admin</title>
+    <title>Home</title>
 
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/" />
 
@@ -29,24 +29,3 @@
     <!-- Styles -->
     <link href="style.css" rel="stylesheet" />
 </head>
-
-<body class="body-registro">
-    <div class="container-registro">
-        <div class="left-half"></div>
-        <div class="right-half">
-            <p>¿Ya tienes cuenta?<a href="inicioSesion.html" class="link-secondary"><strong> Iniciar sesión</strong></a></p>
-            <h2>Registrarse</h2>
-            <form class="formulario">
-                <label for="username">Nombre de usuario</label>
-                <input type="text" id="username" name="username">
-                <label for="correo">Correo electrónico</label>
-                <input type="text" id="correo" name="correo">
-                <label for="contra">Contraseña</label>
-                <input type="text" id="contra" name="contra">
-                <div class="btn-registro">
-                    <button class="btn-agregar">Iniciar Sesión</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>

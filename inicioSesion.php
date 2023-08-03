@@ -6,23 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Directorio de restaurantes" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Inicio Admin</title>
+    <title>Inicio usuario</title>
 
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
     <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 
@@ -33,23 +28,23 @@
 <body class="body-login">
     <div class="container-login">
         <h3 class="titulo-login">Iniciar sesión</h3>
-        <form class="formulario">
+        <form action="login-registro/procesar-login.php" method="POST" class="formulario">
             <div class="login">
                 <label for="correo">Correo electrónico</label>
             </div>
             <div class="login">
-                <input type="text" id="correo" name="correo">
+                <input type="text" id="correo" name="correo" required>
             </div>
             <div class="login">
                 <label for="contra">Contraseña</label>
             </div>
             <div class="login">
-                <input type="password" id="contra" name="contra">
+                <input type="text" id="contra" name="contra" required>
             </div>
             <div class="btn-login">
-                <button class="btn-agregar">Iniciar Sesión</button>
+                <button class="btn-agregar" type="submit">Iniciar Sesión</button>
             </div>
-            <a href="registrarse.html" class="nav-link link-secondary">Registrarse</a>
+            <a href="registrarse.php" class="nav-link link-secondary">Registrarse</a>
         </form>
     </div>
 </body>

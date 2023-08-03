@@ -4,7 +4,7 @@ const cardDivs = document.querySelectorAll(".card");
 provinceDivs.forEach((div) => {
   div.addEventListener("click", () => {
     const provinceId = div.dataset.provinceId;
-    window.location.href = `homePage.php?provinceId=${provinceId}`;
+    window.location.href = `restaurantes.php?provinceId=${provinceId}`;
     console.log(provinceId);
   });
 });
