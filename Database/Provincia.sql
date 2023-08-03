@@ -33,13 +33,5 @@ INSERT INTO restaurants (name, calification, food_type, province_id) VALUES
   calification DECIMAL(2, 1) NOT NULL,
   fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (restaurante_id) REFERENCES restaurants(id),
-  FOREIGN KEY (usuario_id) REFERENCES usuario(idUsuario)
-) ENGINE = InnoDB;
-
-CREATE TABLE usuario (
-    idUsuario INT(5) NOT NULL AUTO_INCREMENT , 
-    username VARCHAR(30) NOT NULL , 
-    correo VARCHAR(30) NOT NULL , 
-    contra VARCHAR(20) NOT NULL , 
-    PRIMARY KEY (idUsuario(11))
+  FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario)
 ) ENGINE = InnoDB;

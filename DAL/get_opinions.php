@@ -4,7 +4,7 @@ require_once "DAL/connect.php";
 $conexion = Conecta();
 
 try{
-    $_GET['restaurantId'];
+    $_GET['restauranteId'];
         $restaurante_id = mysqli_real_escape_string($conexion,$_GET['restauranteId']);
         $query = "SELECT * FROM opiniones WHERE restaurante_Id = $restaurante_id";
         $result = mysqli_query($conexion, $query);

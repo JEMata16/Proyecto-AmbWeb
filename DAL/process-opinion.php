@@ -1,11 +1,11 @@
 <?php 
 
-require_once "DAL/connect.php";
+require_once "connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $rating = $_POST["rating"];
     $opinion = $_POST["opinion"];
-    $restaurante_id = $_POST["restaurante_id"]; // Assuming you have a hidden input with restaurante_id
+    $restaurante_id = $_POST["restaurantId"]; 
 
     // Insert opinion into the 'opiniones' table
     $conn = Conecta();

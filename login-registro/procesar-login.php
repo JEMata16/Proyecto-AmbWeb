@@ -42,7 +42,7 @@ if ($correoOk && $contraOk && $_SERVER["REQUEST_METHOD"] === "POST"){
     if ($resultado->num_rows === 1) {
         $_SESSION["loggedin"] = true;
         $_SESSION["correo"] = $correo;
-        header("Location: ../homePage.php?idUsuario=$resultado");
+        header("Location: ../homePage.php?idUsuario={$resultado}");
         exit;
     } else {
         echo "Lo sentimos, el correo o contraseña digitados son incorrectos";
