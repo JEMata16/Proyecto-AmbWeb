@@ -7,9 +7,13 @@ require_once "templates/head.php";
         <div class="left-half"></div>
         <div class="right-half">
             
-            <p>¿Ya tienes cuenta?<a href="inicioSesion.php" class="link-secondary"><strong> Iniciar sesión</strong></a></p>
+            <p>¿Ya tienes cuenta?<a href="inicioSesion.php" class="link-secondary link-inicio"><strong> Iniciar sesión</strong></a></p>
             <h2>Registrarse</h2>
-            <form action="login-registro/procesar-registro.php" method="POST" class="formulario">
+            <?php
+            require "DAL/conexion.php";
+            require "login-registro/procesar-registro.php";
+            ?>
+            <form action="" method="POST" class="formulario">
                 <label for="username">Nombre de usuario</label>
                 <input type="text" id="username" name="username" required>
                 <label for="correo">Correo electrónico</label>
@@ -17,7 +21,7 @@ require_once "templates/head.php";
                 <label for="contra">Contraseña</label>
                 <input type="text" id="contra" name="contra" required>
                 <div class="btn-registro">
-                    <button class="btn-agregar" type="submit">Registrarse</button>
+                    <input name="registro" class="btn-agregar" type="submit" value="Registrarse">
                 </div>
             </form>
         </div>

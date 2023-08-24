@@ -1,37 +1,52 @@
 <?php
-require_once '../DAL/conexion.php';
+
 echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css%22%3E';
 echo '<div class="container mt-5">';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $correo = $_POST["correo"];
-  $contra = $_POST["contra"];
+$conexion = Conecta();
 
-  $connection = Conecta();
-
-  // Verificar la conexión
-  if (!$connection) {
-    die("Error al conectar a la base de datos: " . mysqli_connect_error());
-  }
-
-  // Preparar la consulta para insertar al usuario en la base de datos
-  $query = "INSERT INTO usuario (username, correo, contra) VALUES (?, ?, ?)";
-  $stmt = mysqli_prepare($connection, $query);
-
-  // Vincular los parámetros con los valores reales
-  mysqli_stmt_bind_param($stmt, "sss", $username, $correo, $contra);
-
-  // Ejecutar la consulta
-  if (mysqli_stmt_execute($stmt)) {
-    echo '<div class="alert alert-success" role="alert">Usuario agregado exitosamente.</div>';
-    header("refresh:2; url=../inicioSesion.php");
+if(!empty($_POST["registro"])){
+  if(empty($_POST["username"]) or empty($_POST["correo"]) or empty($_POST["contra"])){
+    echo '<div class="alert alert-danger">Estimado usuario, debe completar todos los campos que se le muestran</div>';
   } else {
-    echo '<div class="alert alert-danger" role="alert">Error al agregar al usuario' . mysqli_error($connection) . '</div>';
-    header("refresh:2; url=../registrarse.php");
-  }
+    $username=$_POST["username"];
+    $correo=$_POST["correo"];
+    $contra=$_POST["contra"];
+    $contra=password_hash($contra, PASSWORD_DEFAULT);
 
-  // Cerrar la conexión
-  mysqli_close($connection);
+    $bd=$conexion->query("INSERT into usuario(username, correo, contra) values ('$username','$correo','$contra')");
+
+    if($bd==1){
+      echo '<div class="alert alert-success">Usuario agregado exitosamente. Ya puede iniciar su sesión</div>';
+      header("refresh:3; url=./inicioSesion.php");
+    } else{
+      echo '<div class="alert alert-danger">Estimado usuario, se produjo un error al realizar el registro</div>';
+    }
+  } 
+}
+
+if (!empty($_POST["btn-ingreso"])) {
+  if (empty($_POST["correo"]) or empty($_POST["contra"])) {
+      echo '<div class="alert alert-danger">Estimado usuario, debe completar todos los campos que se le muestran</div>';
+  } else {
+      $correo = $_POST["correo"];
+      $contra = $_POST["contra"];
+      $bd = "SELECT * FROM usuario where correo='$correo'";
+      $resultado = mysqli_query($conexion, $bd);
+
+      if (mysqli_num_rows($resultado) > 0) {
+          while ($columna = mysqli_fetch_array($resultado)) {
+              if (password_verify($contra, $columna['contra']) && $columna['idCargo'] != 2 || $columna['idCargo'] != null) {
+                  header("location: ./inicioAdmin.php");
+              } elseif (password_verify($contra, $columna['contra']) && $columna['idCargo'] == 2 || $columna['idCargo'] == null) {
+                  header("location: ./homePage.php");
+              } else {
+                  echo '<div class="alert alert-danger">Estimado usuario, los datos digitados no corresponden a ninguna persona registrada</div>';
+              }
+          }
+      } else {
+          echo '<div class="alert alert-danger">Estimado usuario, se produjo un error al realizar el inicio de sesión</div>';
+      }
+  }
 }
 ?>

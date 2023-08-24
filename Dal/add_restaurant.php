@@ -34,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Ejecutar la consulta
   if (mysqli_stmt_execute($stmt)) {
     echo '<div class="alert alert-success" role="alert">Restaurante agregado exitosamente.</div>';
-    header("refresh:3; url=../homePage.html");
+    header("refresh:3; url=../inicioAdmin.php");
   } else {
     echo '<div class="alert alert-danger" role="alert">Error al agregar el restaurante: ' . mysqli_error($connection) . '</div>';
-    header("refresh:3; url=../homePage.html");
+    header("refresh:3; url=../inicioAdmin.php");
   }
 
   // Cerrar la conexión
