@@ -18,6 +18,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -44,13 +47,11 @@
                         <span class="fa fa-search form-control-feedback"></span>
                         <input type="text" class="form-control rounded-pill" placeholder="Search" />
                     </div>
-                    <p class="nav-link link-secondary">
+                    <a href="Index.html" class="nav-link link-secondary">
                         <?php
-                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             echo  htmlspecialchars($_SESSION['correo']);;
-                        }
                         ?>
-                    </p>
+                    </a>
                 </div>
             </div>
         </nav>

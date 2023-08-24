@@ -42,7 +42,7 @@ $topRestaurants = array_slice($restaurants, 0, 2);
                             <p class="card-text">Calificación:
                                 <?php echo $restaurant['calification']; ?>
                             </p>
-                            <p class="card-text">Food Type:
+                            <p class="card-text">Tipo de comida:
                                 <?php echo $restaurant['food_type']; ?>
                             </p>
                         </div>

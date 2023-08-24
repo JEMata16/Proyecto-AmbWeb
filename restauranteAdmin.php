@@ -56,7 +56,7 @@
             </section>
         </div>
 
-        <?php require_once "DAL/opiniones_admin.php"; ?>
+        <?php require_once "DAL/get_opinions.php"; ?>
 
 
         <section class="container" id="highestRanking">
@@ -81,7 +81,7 @@
 
     <!-- FOOTER -->
     <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
+        <p class="float-right"><a href="#">Volver arriba</a></p>
         <p>
             &copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot;
             <a href="#">Terms</a>
