@@ -45,7 +45,9 @@
                 <label class="form-label" for="image">Imagen</label>
                 <input type="file" class="form-control" name="image" accept="image/*">
             </div>
-            <button type="submit" class="btn btn-primary">Agregar Restaurante</button>
+            <div class="btn-editar">
+                <input type="submit" class="btn-agregar" value="Agregar Restaurante">
+            </div>
         </form>
     </div>
 </body>

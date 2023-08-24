@@ -13,7 +13,7 @@ $query = mysqli_query($conexion, $bd);
 
 if($query){
     echo '<div class="alert alert-success">La opinión se ha eliminado correctamente</div>';
-    header("refresh:2; url=./inicioAdmin.php");
+    header("refresh:2; url=../inicioAdmin.php");
 
 } else {
     echo '<div class="alert alert-danger">Se produjo un error al eliminar la opinión</div>';

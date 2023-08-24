@@ -28,7 +28,7 @@ require_once "templates/header.php" ?>
                 </p>
                 <div>
                     <h3>Comidas</h3>
-                    <p class="">Food Type:
+                    <p class="">Tipo de comida:
                         <?php echo $restaurant['food_type']; ?>
                     </p>
                 </div>
@@ -72,7 +72,7 @@ require_once "templates/header.php" ?>
 
     <!-- FOOTER -->
     <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
+        <p class="float-right"><a href="#">Volver arriba</a></p>
         <p>
             &copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot;
             <a href="#">Terms</a>

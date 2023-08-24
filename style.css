@@ -332,7 +332,7 @@ a {
 
 .left-half {
   flex: 1;
-  background-color: #BFBFBF;
+  background-color: #332D2D;
 }
 
 .right-half {
@@ -424,6 +424,10 @@ a {
 
 .iconos-rest :hover{
   color: #332D2D;
+}
+
+.link-inicio{
+  color: #84AEBF;
 }
 
 /* Inicio admin

@@ -13,7 +13,6 @@ if(!empty($_POST["registro"])){
     $correo=$_POST["correo"];
     $contra=$_POST["contra"];
     $contra=password_hash($contra, PASSWORD_DEFAULT);
-
     $bd=$conexion->query("INSERT into usuario(username, correo, contra) values ('$username','$correo','$contra')");
 
     if($bd==1){
@@ -33,6 +32,8 @@ if (!empty($_POST["btn-ingreso"])) {
       $contra = $_POST["contra"];
       $bd = "SELECT * FROM usuario where correo='$correo'";
       $resultado = mysqli_query($conexion, $bd);
+      session_start();
+      $_SESSION["correo"]=$correo;
 
       if (mysqli_num_rows($resultado) > 0) {
           while ($columna = mysqli_fetch_array($resultado)) {
