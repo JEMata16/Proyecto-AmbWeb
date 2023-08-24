@@ -27,4 +27,7 @@ function getUsername($opinion){
     echo $username['username'];
     Desconecta($conexion);
 }
+
+
+
 ?>

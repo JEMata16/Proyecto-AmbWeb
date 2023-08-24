@@ -33,6 +33,7 @@ session_start();
 $resultado = $conexion->query("SELECT idUsuario from usuario where correo = '$correo' and contra = '$contra'");
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+    $_SESSION["correo"] = $correo;
     header("Location: ../homePage.php?idUsuario=$correo");
     exit;
 }

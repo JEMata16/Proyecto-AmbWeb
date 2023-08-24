@@ -1,4 +1,5 @@
-<?php require_once "templates/header.php" ?>
+<?php session_start();
+require_once "templates/header.php" ?>
 
 <body>
 
@@ -39,20 +40,31 @@
 
         <section class="container" id="highestRanking">
             <h2>Opiniones</h2>
-            <button class="btn-agregar"><a href="agregarOpinion.php?restauranteId=<?php echo $restaurant['id']; ?>" style="color:white">Agregar opinión</a></button>
+            <button class="btn-agregar"><a href="agregarOpinion.php?restauranteId=<?php echo $restaurant['id']; ?>"
+                    style="color:white">Agregar opinión</a></button>
             <div>
                 <?php foreach ($opinions as $opinion): ?>
                     <div class="op-usuario row">
                         <h5>
                             <?php getUsername($opinion) ?>
+
                         </h5>
-                        <div class="ratingOpinion" id="rating-cliente">
+                        <div class="ratingOpinion column" id="rating-cliente">
+                            <form method="post" action="DAL/deleteOpinion.php">
+                                <input type="hidden" name="opinion_id" value="<?php echo $opinion['id']; ?>">
+                                <input type="hidden" name="username" value="<?php echo getUsername($opinion); ?>">
+                                <input type="hidden" name="user_id" value="<?php echo $opinion['idUsuario']; ?>">
+                                <button type="submit" class="fa fa-trash button m-2"></button>
+                               
+                            </form>
                             <p class="">Calificación:
-                                <?php echo $opinion['calification']; ?>
+                                    <?php echo $opinion['calification']; ?>
                             </p>
                         </div>
                     </div>
-                    <p class="bg-light rounded-pill p-3"><?php echo $opinion['opinion'] ?></p>
+                    <p class="bg-light rounded-pill p-3">
+                        <?php echo $opinion['opinion'] ?>
+                    </p>
                 </div>
             <?php endforeach; ?>
         </section>

@@ -46,8 +46,8 @@
                     </div>
                     <p class="nav-link link-secondary">
                         <?php
-                        if (isset($_GET["idUsuario"])) {
-                            echo $_GET["idUsuario"];
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                            echo  htmlspecialchars($_SESSION['correo']);;
                         }
                         ?>
                     </p>

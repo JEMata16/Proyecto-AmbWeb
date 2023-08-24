@@ -1,4 +1,5 @@
-<?php require_once "templates/header.php" ?>
+<?php session_start();
+require_once "templates/header.php" ?>
 <?php require_once "DAL/get_restaurant.php" ?>
 
 <body>
@@ -21,10 +22,14 @@
                     <p class="">Calificación:
                         <?php echo $restaurant['calification']; ?>
                     </p>
-                    <p><?php echo $province['nombre'] ?></p>
+                    <p>
+                        <?php echo $province['nombre'] ?>
+                    </p>
                     <div>
                         <h3>Comidas</h3>
-                        <p><?php echo $restaurant['food_type']; ?></p>
+                        <p>
+                            <?php echo $restaurant['food_type']; ?>
+                        </p>
                     </div>
                 </section>
             </div>
@@ -41,16 +46,17 @@
                 <fieldset>
                     <legend>¿Cómo valora la experiencia?</legend>
                     <div class="ratingForm">
-                        <input type="radio" id="star1-1" name="rating" value="1" />
-                        <label for="star1-1"></label>
-                        <input type="radio" id="star2-1" name="rating" value="2" />
-                        <label for="star2-1"></label>
-                        <input type="radio" id="star3-1" name="rating" value="3" />
-                        <label for="star3-1"></label>
-                        <input type="radio" id="star4-1" name="rating" value="4" />
-                        <label for="star4-1"></label>
                         <input type="radio" id="star5-1" name="rating" value="5" />
                         <label for="star5-1"></label>
+                        <input type="radio" id="star4-1" name="rating" value="4" />
+                        <label for="star4-1"></label>
+                        <input type="radio" id="star3-1" name="rating" value="3" />
+                        <label for="star3-1"></label>
+                        <input type="radio" id="star2-1" name="rating" value="2" />
+                        <label for="star2-1"></label>
+                        <input type="radio" id="star1-1" name="rating" value="1" />
+                        <label for="star1-1"></label>
+
                     </div>
                 </fieldset>
                 <label for="opinion">Escriba su opinión (Opcional)</label>
